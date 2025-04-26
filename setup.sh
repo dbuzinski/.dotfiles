@@ -65,6 +65,7 @@ if [ "$(uname)" == "Linux" ]; then
     sudoIfAvailable apt-get install -y tmux
     sudoIfAvailable apt-get install -y gcc
     sudoIfAvailable apt-get install -y ripgrep
+    sudoIfAvailable apt-get install -y nodejs npm
   # Catch unsupported Linux distros
   else
     echo "Unsupported Linux distro"
@@ -76,8 +77,8 @@ if [ "$(uname)" == "Linux" ]; then
   if ! command -v nvim &> /dev/null; then
     curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
     sudoIfAvailable rm -rf /opt/nvim
-    sudoIfAvailable tar -C /opt -xzf nvim-linux64-x86_64.tar.gz
-    sudoIfAvailable ln -s /opt/nvim-linux64/bin/nvim /usr/local/bin/nvim
+    sudoIfAvailable tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+    sudoIfAvailable ln -s /opt/nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim
   fi
 fi
 
