@@ -1,3 +1,7 @@
+#!/bin/bash
+
+set -e
+
 sudoIfAvailable() {
   if command -v sudo; then
     sudo "$@"
